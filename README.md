@@ -1,111 +1,111 @@
-# 🚴 Vélo Game – Jeu de course en C++ / SDL2
+# 🚴 Vélo Game – Bike Racing Game in C++ / SDL2
 
 ## 🎯 Introduction
 
-Ce projet a été réalisé dans le cadre du module de Programmation Orientée Objet (POO). L’objectif était de mettre en œuvre les concepts clés de la POO en C++ à travers le développement d’un jeu interactif utilisant la bibliothèque SDL2.
+This project was developed as part of the Object-Oriented Programming (OOP) module. The goal was to apply key OOP concepts in C++ through the development of an interactive game using the SDL2 library.
 
-Nous avons mobilisé des notions telles que :
-- Conception en classes, héritage, polymorphisme
-- Fonctions amies, templates, exceptions
-- Utilisation de la STL
-- Structuration modulaire du code
+We made use of concepts such as:
+- Class design, inheritance, polymorphism  
+- Friend functions, templates, exceptions  
+- Use of the STL  
+- Modular code structure  
 
-Ce jeu a été également une opportunité de renforcer nos compétences en travail d’équipe, planification et résolution de problèmes.
-
----
-
-## 🧠 Conception et modélisation
-
-### 📌 Schéma de classes (UML)
-
-- `Game` est la classe principale, orchestrant l’ensemble du jeu.
-- `Player`, `Obstacle`, `Timer`, `Menu`, et `Constantes` sont des composants utilisés par `Game`.
-- `Game` possède un `Timer` (composition).
-- Les autres classes sont utilisées via des associations simples.
+This game was also an opportunity to strengthen our skills in teamwork, planning, and problem-solving.
 
 ---
 
-## 🧩 Description des classes
+## 🧠 Design and Modeling
+
+### 📌 Class Diagram (UML)
+
+- `Game` is the main class, orchestrating the entire game.
+- `Player`, `Obstacle`, `Timer`, `Menu`, and `Constantes` are components used by `Game`.
+- `Game` owns a `Timer` (composition).
+- The other classes are used via simple associations.
+
+---
+
+## 🧩 Class Descriptions
 
 ### `Game`
-- Gère la logique du jeu : `init()`, `run()`, `render()`, `handleEvents()`, etc.
-- Gère les boutons de fin avec `renderButtons()`.
+- Manages the game logic: `init()`, `run()`, `render()`, `handleEvents()`, etc.
+- Handles end-game buttons with `renderButtons()`.
 
 ### `Player`
-- Représente le cycliste.
-- Méthodes : `handleInput()`, `update()`, `render()`, `collidesWith()`...
+- Represents the cyclist.
+- Methods: `handleInput()`, `update()`, `render()`, `collidesWith()`...
 
 ### `Obstacle`
-- Représente des obstacles sur la route.
-- Méthodes : `update()`, `render()`, `getType()`...
+- Represents obstacles on the road.
+- Methods: `update()`, `render()`, `getType()`...
 
 ### `Timer`
-- Gère le compte à rebours.
-- Méthodes : `reset()`, `getRemainingTime()`, `render()`
+- Manages the countdown.
+- Methods: `reset()`, `getRemainingTime()`, `render()`
 
 ### `Menu`
-- Affiche l’écran d’accueil, les boutons, et la page À propos.
+- Displays the home screen, buttons, and the About page.
 
 ### `Constantes.h`
-- Contient les valeurs de configuration globales (dimensions, vitesses, chemins...).
+- Contains global configuration values (dimensions, speeds, paths...).
 
 ---
 
-## ⚙️ Environnement de travail
+## ⚙️ Work Environment
 
 ### 🧰 Microsoft Visual Studio
-- IDE principal utilisé.
-- Supporte bien C++ et SDL2.
-- Gestion efficace des projets complexes.
+- Main IDE used.
+- Good support for C++ and SDL2.
+- Efficient for managing complex projects.
 
 ### 🎮 SDL2
-- Bibliothèque multimédia pour l’affichage graphique, les événements clavier/souris, etc.
-- Open source, multiplateforme, très utilisée pour les jeux.
+- Multimedia library for graphics rendering, keyboard/mouse events, etc.
+- Open-source, cross-platform, widely used for games.
 
 ---
 
-## 🛠️ Implémentation
+## 🛠️ Implementation
 
-Le projet est découpé en plusieurs fichiers :
+The project is divided into several files:
 - `main.cpp`, `Game.cpp/.h`, `Player.cpp/.h`, `Obstacle.cpp/.h`, `Timer.cpp/.h`, `Menu.cpp/.h`, `Constantes.h`
 
-### 🔁 Fonctionnement
-- **Initialisation** : chargement des images, polices, textures
-- **Boucle principale** : événements → mise à jour → rendu
-- **Obstacles** : générés dynamiquement, certains fatals, d’autres ralentissants
-- **Joueur** : peut sauter, collisions détectées
+### 🔁 Workflow
+- **Initialization**: loading images, fonts, textures
+- **Main loop**: events → update → render
+- **Obstacles**: generated dynamically, some fatal, others slowing down the player
+- **Player**: can jump, collisions are detected
 
 ---
 
-## 🖥️ Interfaces du jeu
+## 🖥️ Game Interfaces
 
-### 🎮 Écran principal
-- Joueur, obstacles, fond animé, chrono, victoire/défaite
+### 🎮 Main Screen
+- Player, obstacles, animated background, timer, win/lose display
 
-### ❌ Écran Game Over / Victoire
-- Image + boutons `Rejouer` et `Quitter`
+### ❌ Game Over / Victory Screen
+- Image + `Retry` and `Quit` buttons
 
-### 🏠 Menu principal
-- Boutons : `Jouer`, `À propos`, `Quitter` avec survol
+### 🏠 Main Menu
+- Buttons: `Play`, `About`, `Quit` with hover effects
 
-### ℹ️ Page À propos
-- Règles du jeu, touches, conseils
+### ℹ️ About Page
+- Game rules, controls, tips
 
 ---
 
 ## 💣 Obstacles
 
-- Obstacles fatals, générés dynamiquement
-- Collision → `Game Over` immédiat
+- Fatal obstacles generated dynamically  
+- Collision → immediate `Game Over`
 
 ---
 
 ## ✅ Conclusion
 
-Ce projet nous a permis de :
-- Consolider nos acquis en C++
-- Gérer un projet de bout en bout
-- Résoudre des défis concrets en autonomie
-- Collaborer efficacement et structurer notre travail
+This project allowed us to:
+- Strengthen our C++ skills  
+- Manage a project from start to finish  
+- Solve real challenges independently  
+- Collaborate efficiently and structure our work  
 
-C’est une étape importante dans notre parcours, et un tremplin vers d'autres projets professionnels ou personnels.
+It marks an important step in our learning journey and serves as a springboard for future professional or personal projects.
